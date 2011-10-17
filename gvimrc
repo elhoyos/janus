@@ -1,61 +1,63 @@
-if has("gui_macvim")
+" TODO: if gvim is loaded with a file argument
+" the menu will not work (Ubuntu 11.04, GVim 2:7.3.035)
+if has("gui_gnome")
   " Fullscreen takes up entire screen
-  set fuoptions=maxhorz,maxvert
+  " set fuoptions=maxhorz,maxvert
 
   " Command-T for CommandT
-  macmenu &File.New\ Tab key=<D-T>
-  map <D-t> :CommandT<CR>
-  imap <D-t> <Esc>:CommandT<CR>
+  " macmenu &File.New\ Tab key=<A-T>
+  map <A-t> :CommandT<CR>
+  imap <A-t> <Esc>:CommandT<CR>
 
   " Command-Return for fullscreen
-  macmenu Window.Toggle\ Full\ Screen\ Mode key=<D-CR>
+  " macmenu Window.Toggle\ Full\ Screen\ Mode key=<A-CR>
 
   " Command-Shift-F for Ack
-  map <D-F> :Ack<space>
+  map <A-F> :Ack<space>
 
   " Command-e for ConqueTerm
-  map <D-e> :call StartTerm()<CR>
+  map <A-e> :call StartTerm()<CR>
 
   " Command-/ to toggle comments
-  map <D-/> <plug>NERDCommenterToggle<CR>
-  imap <D-/> <Esc><plug>NERDCommenterToggle<CR>i
+  map <A-/> <plug>NERDCommenterToggle<CR>
+  imap <A-/> <Esc><plug>NERDCommenterToggle<CR>i
 
 
   " Command-][ to increase/decrease indentation
-  vmap <D-]> >gv
-  vmap <D-[> <gv
+  vmap <A-]> >gv
+  vmap <A-[> <gv
 
   " Map Command-# to switch tabs
-  map  <D-0> 0gt
-  imap <D-0> <Esc>0gt
-  map  <D-1> 1gt
-  imap <D-1> <Esc>1gt
-  map  <D-2> 2gt
-  imap <D-2> <Esc>2gt
-  map  <D-3> 3gt
-  imap <D-3> <Esc>3gt
-  map  <D-4> 4gt
-  imap <D-4> <Esc>4gt
-  map  <D-5> 5gt
-  imap <D-5> <Esc>5gt
-  map  <D-6> 6gt
-  imap <D-6> <Esc>6gt
-  map  <D-7> 7gt
-  imap <D-7> <Esc>7gt
-  map  <D-8> 8gt
-  imap <D-8> <Esc>8gt
-  map  <D-9> 9gt
-  imap <D-9> <Esc>9gt
+  map  <A-0> 0gt
+  imap <A-0> <Esc>0gt
+  map  <A-1> 1gt
+  imap <A-1> <Esc>1gt
+  map  <A-2> 2gt
+  imap <A-2> <Esc>2gt
+  map  <A-3> 3gt
+  imap <A-3> <Esc>3gt
+  map  <A-4> 4gt
+  imap <A-4> <Esc>4gt
+  map  <A-5> 5gt
+  imap <A-5> <Esc>5gt
+  map  <A-6> 6gt
+  imap <A-6> <Esc>6gt
+  map  <A-7> 7gt
+  imap <A-7> <Esc>7gt
+  map  <A-8> 8gt
+  imap <A-8> <Esc>8gt
+  map  <A-9> 9gt
+  imap <A-9> <Esc>9gt
 
   " Command-Option-ArrowKey to switch viewports
-  map <D-M-Up> <C-w>k
-  imap <D-M-Up> <Esc> <C-w>k
-  map <D-M-Down> <C-w>j
-  imap <D-M-Down> <Esc> <C-w>j
-  map <D-M-Right> <C-w>l
-  imap <D-M-Right> <Esc> <C-w>l
-  map <D-M-Left> <C-w>h
-  imap <D-M-Left> <C-w>h
+  map <A-Up> <C-w>k
+  imap <A-Up> <Esc> <C-w>k
+  map <A-Down> <C-w>j
+  imap <A-Down> <Esc> <C-w>j
+  map <A-Right> <C-w>l
+  imap <A-Right> <Esc> <C-w>l
+  map <A-Left> <C-w>h
+  imap <A-Left> <C-w>h
 
   " Adjust viewports to the same size
   map <Leader>= <C-w>=
@@ -65,8 +67,13 @@ endif
 " Don't beep
 set visualbell
 
-" Start without the toolbar
+" Start without the toolbar and 
+" strip the scrollbars
 set guioptions-=T
+set guioptions-=r
+set guioptions-=l
+set guioptions-=R
+set guioptions-=L
 
 " Default gui color scheme
 color ir_black
