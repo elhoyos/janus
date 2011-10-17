@@ -1,5 +1,5 @@
-" TODO: if gvim is loaded with a file argument
-" the menu will not work (Ubuntu 11.04, GVim 2:7.3.035)
+" TODO: if gvim is loaded via terminal the app menu 
+" will not work (Ubuntu 11.04, GVim 2:7.3.035)
 if has("gui_gnome")
   " Fullscreen takes up entire screen
   " set fuoptions=maxhorz,maxvert
@@ -68,11 +68,10 @@ endif
 set visualbell
 
 " Start without the toolbar and 
-" strip the scrollbars
+" strip default scrollbars
 set guioptions-=T
 set guioptions-=r
 set guioptions-=l
-set guioptions-=R
 set guioptions-=L
 
 " Default gui color scheme
